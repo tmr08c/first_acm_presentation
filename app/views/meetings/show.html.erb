@@ -10,5 +10,12 @@
   <%= @meeting.description %>
 </p>
 
+<p>
+  <strong>Users:</strong>
+  <% @meeting.users.each do |user| %>
+    <%= user.name %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_meeting_path(@meeting) %> |
 <%= link_to 'Back', meetings_path %>

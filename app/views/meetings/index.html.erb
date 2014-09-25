@@ -5,6 +5,7 @@
     <tr>
       <th>Date</th>
       <th>Description</th>
+      <th>Attendees</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= meeting.date %></td>
         <td><%= meeting.description %></td>
+        <td><%= meeting.users.count %></td>
         <td><%= link_to 'Show', meeting %></td>
         <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
         <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
