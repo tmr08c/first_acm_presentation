@@ -22,11 +22,10 @@
 
   <div class="field">
     <%= f.label :users %><br>
-    <%= f.collection_check_boxes :user_ids, User.all, :id, :name %>
+    <%= f.collection_check_boxes :user_ids, User.all, :id, :name, item_wrapper_class: 'checkbox' %>
   </div>
 
-
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
   </div>
 <% end %>
