@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-5">
+    <h3>Name</h3>
+    <%= @user.name %>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="row">
+  <div class="col-md-5">
+    <h3>Email:</h3>
+    <%= link_to @user.email, "mailto:#{@user.email}" %>
+  </div>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Class level:</strong>
-  <%= @user.class_level.titleize %>
-</p>
+<div class="row">
+  <div class="col-md-5">
+    <h3>Class level:</h3>
+    <%= @user.class_level.titleize %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<br><br>
+
+<div class="row">
+  <div class="col-md-5">
+    <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning' %>
+    <%= link_to 'Back', users_path, class: 'btn btn-danger' %>
+  </div>
+</div>

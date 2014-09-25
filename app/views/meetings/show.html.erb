@@ -1,21 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-5">
+    <h3>Date:</h3>
+    <em>
+      <%= @meeting.friendly_date %>
+    </em>
+  </div>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @meeting.date %>
-</p>
+<div class="row">
+  <div class="col-md-5">
+    <h3>Description:</h3>
+     <em>
+      <%= @meeting.description.presence || 'No description available' %>
+    </em>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @meeting.description %>
-</p>
-
-<p>
-  <strong>Users:</strong>
-  <% @meeting.users.each do |user| %>
-    <%= user.name %>
-  <% end %>
-</p>
-
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
+<div class="row">
+  <div class="col-md-5">
+    <h3>Attendees:</h3>
+    <ul>
+      <% @meeting.users.each do |user| %>
+        <li>
+          <%= link_to user.name, user_path(user) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-4">
+    <%= link_to 'Edit', edit_meeting_path(@meeting), class: 'btn btn-warning' %>
+    <%= link_to 'Back', meetings_path, class: 'btn btn-danger' %>
+  </div>
+</div>
