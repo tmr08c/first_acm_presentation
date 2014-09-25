@@ -9,12 +9,13 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: acm_attendance
 
 
 development:
   <<: *default
   database: acm_attendance_development
+  username: acm_attendance
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,6 +23,8 @@ development:
 test:
   <<: *default
   database: acm_attendance_test
+  username: acm_attendance
+
 
 production:
   <<: *default
